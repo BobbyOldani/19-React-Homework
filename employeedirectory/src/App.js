@@ -6,12 +6,33 @@ import API from "./utils/Api";
 
 class App extends Component {
   state = {
-    results: [],
+    results: []
   };
 
   componentDidMount() {
   this.renderEmp();
   };
+
+  sortEmail = () => {
+    let sortedEmail = this.state.results.sort((a, b) => (a.email > b.email) ? 1 : -1);
+    this.setState({results: sortedEmail  });
+  };
+
+  sortLocation = () => {
+    let sortedLocation = this.state.results.sort((a, b) => (a.location.city > b.location.city) ? 1 : -1);
+    this.setState({results: sortedLocation});
+  }
+
+  sortName = () => {
+    let sortedName = this.state.results.sort((a, b) => (a.name.first > b.name.first) ? 1 : -1);
+    this.setState({results: sortedName});
+  }
+
+  sortLogin = () => {
+    let sortedLogin = this.state.results.sort((a, b) => (a.login.username > b.login.username) ? 1 : -1);
+    this.setState({results: sortedLogin});
+  }
+
 renderEmp() {
     API.generateEmployees()
       .then((res) => {
@@ -24,7 +45,12 @@ renderEmp() {
   render() {
     return (
       <div>
-        <Wrapper results={this.state.results}>
+        <Wrapper 
+        results={this.state.results}
+        sortEmail={this.sortEmail}
+        sortLocation={this.sortLocation}
+        sortName={this.sortName}
+        sortLogin={this.sortLogin}>
         </Wrapper>
       </div>
     );

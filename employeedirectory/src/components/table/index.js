@@ -6,14 +6,14 @@ import Row from "../../components/row/index";
 function Table(props) {
   console.log(props.results);
   return (
-    <table class="table table-striped table-dark">
+    <table className="table table-striped table-dark">
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Location</th>
-          <th scope="col">Login</th>
-          <th scope="col">Email</th>
+          <th scope="col"><button onClick={() => props.sortName("name")} className="btn btn-light">Name</button></th>
+          <th scope="col"><button onClick={() => props.sortLocation("location")} className="btn btn-light">Location</button></th>
+          <th scope="col"><button onClick={() => props.sortLogin("login")} className="btn btn-light">Login</button></th>
+          <th scope="col"><button onClick={() => props.sortEmail("email")} className="btn btn-light">Email</button ></th>
         </tr>
       </thead>
 
