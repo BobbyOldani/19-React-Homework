@@ -5,7 +5,7 @@ import "./style.css";
 
 function Wrapper(props) {
   return (
-    <main className="wrapper" {...props}> 
+    <main className="wrapper"> 
     <Table {...props} />
     </main>
  ) 

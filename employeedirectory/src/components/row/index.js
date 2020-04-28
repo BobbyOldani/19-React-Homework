@@ -6,8 +6,8 @@ function Row(props) {
     return (
         <tbody>
       {results.map( (result, index) => (
-            <tr>
-            <th scope="row" key="index">{index}
+            <tr key={index}>
+            <th scope="row">{index}
             </th>          
             <td>
             {result.name.first}
